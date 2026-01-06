@@ -1,7 +1,6 @@
 const newCardBtn = document.getElementById("new-card");
 const newGameBtn = document.getElementById("new-game");
 const startGameBtn = document.getElementById("start-game-btn");
-const hiddenBtns = document.getElementsByClassName("hidden-btn")
 
 const cardsDisplay = document.getElementById("cards");
 const msgText = document.getElementById("msg");
@@ -12,7 +11,7 @@ const initMsg = document.getElementById("init-msg");
 // let secondCard = 10;
 // let sum = firstCard + secondCard;
 let hasBlackJack = false;
-let isAlive = true
+let isAlive = false
 
 
 function randonNumGenerator() {
@@ -37,6 +36,7 @@ const startGame = startGameBtn.addEventListener("click", (e) => {
     newCardBtn.classList.remove("hidden")
     newGameBtn.classList.add("hidden")
 
+    isAlive = true
     startGameBtn.classList.add("hidden")
 })
 
@@ -54,7 +54,6 @@ const clicknewCardBtn = newCardBtn.addEventListener("click", (e) => {
         const cardValue = randonNumGenerator()
         // const cardValue = cardId(randNum)
         cardsList.push(cardValue)
-
 
         cardsDisplay.textContent += `${cardsList[count]} | `;
 
@@ -85,7 +84,6 @@ const clickNewGameBtn = newGameBtn.addEventListener("click", (e) => {
     sumDisplay.textContent = `Sum: ${sum}`
     msgText.textContent = ""
     hasBlackJack = false;
-    isAlive = true
 
     newCardBtn.classList.add("hidden")
     newGameBtn.classList.add("hidden")
