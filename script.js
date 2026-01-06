@@ -3,7 +3,7 @@ const newGameBtn = document.getElementById("new-game");
 const startGameBtn = document.getElementById("start-game-btn");
 const hiddenBtns = document.getElementsByClassName("hidden-btn")
 
-const cardsList = document.getElementById("cards");
+const cardsDisplay = document.getElementById("cards");
 const msgText = document.getElementById("msg");
 const sumDisplay = document.getElementById("sum");
 const initMsg = document.getElementById("init-msg");
@@ -41,21 +41,24 @@ const startGame = startGameBtn.addEventListener("click", (e) => {
 })
 
 
-
-cardsList.textContent = "cards: "
+cardsList = []
+cardsDisplay.textContent = "cards: "
 sumDisplay.textContent = "Sum: "
 
+count = 0
 let sum = 0;
 sumDisplay.textContent += sum
 
 const clicknewCardBtn = newCardBtn.addEventListener("click", (e) => {
     if (!isAlive || hasBlackJack) return
-        const randNum = randonNumGenerator()
-        const cardValue = cardId(randNum)
+        const cardValue = randonNumGenerator()
+        // const cardValue = cardId(randNum)
+        cardsList.push(cardValue)
 
-        cardsList.textContent += `${cardValue} | `;
 
-        sum += randNum
+        cardsDisplay.textContent += `${cardsList[count]} | `;
+
+        sum += cardValue
         sumDisplay.textContent = `Sum: ${sum}`
 
         if (sum < 21) {
@@ -71,23 +74,22 @@ const clicknewCardBtn = newCardBtn.addEventListener("click", (e) => {
             newCardBtn.classList.add("hidden")
             newGameBtn.classList.remove("hidden")
         }
+        count+= 1
 })
 
 
 
 const clickNewGameBtn = newGameBtn.addEventListener("click", (e) => {
-    cardsList.textContent = "cards: "
+    cardsDisplay.textContent = "cards: "
     sum = 0
     sumDisplay.textContent = `Sum: ${sum}`
     msgText.textContent = ""
     hasBlackJack = false;
     isAlive = true
 
-
     newCardBtn.classList.add("hidden")
     newGameBtn.classList.add("hidden")
-
     startGameBtn.classList.remove("hidden")
-
     initMsg.textContent = "Want to play a round?"
+    console.clear()
 })
