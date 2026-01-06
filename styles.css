@@ -1,0 +1,86 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: roboto;
+}
+
+body {
+    color: white;
+    background-image: url(img/table.png);
+    background-size: cover;
+    height: 100vh;
+
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    height: 500px;
+    width: 40%;
+    padding: 40px;
+    font-weight: bold;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+}
+
+.main h1 {
+    color: goldenrod;
+    font-size: 3.5em;
+    margin-bottom: 50px;
+}
+.main small {
+    margin-bottom: 25px;
+    font-size: 2em;
+    font-style: italic;
+}
+
+.main #sum {
+    margin-bottom: 10px;
+}
+
+.main #cards {
+    margin-bottom: 20px;
+}
+
+.main .inner-txt {
+    font-size: 1.5em;
+}
+
+.main .btn-box {
+    width: 300px;
+    margin-top: 30px;
+    margin-bottom: 70px;
+    /* border: 1px solid black; */
+}
+
+.main .buttons {
+    color: rgb(7, 83, 7);
+    font-size: 2em;
+    letter-spacing: 2px;
+    font-weight: bolder;
+    padding: 15px 0;
+    width: 300px;
+    background-color: rgb(206, 172, 92);
+    border: none;
+    border-radius: 10px;
+}
+
+.main .buttons:hover {
+    color: rgb(7, 83, 7);
+    background-color: goldenrod;
+}
+
+.hidden {
+    display: none;
+}
+.main #msg {
+    font-style: italic;
+    font-size: 1.6em;
+}
