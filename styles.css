@@ -7,8 +7,9 @@ font-family: roboto;
 
 body {
     color: white;
-    background-image: url(img/table.png);
-    background-size: cover;
+    /* background-image: url(img/table.png); */
+    /* background-size: cover; */
+    background-color: rgb(18, 112, 18);
     height: 100vh;
 
     display: flex;
